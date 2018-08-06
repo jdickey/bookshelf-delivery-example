@@ -7,7 +7,7 @@ RUBY_VERSION=`ruby --version | cut -d ' ' -f 2 | sed 's/p.*//'`
 ## Initialise Gemset and setup if `rbenv` is available
 ##
 
-# rm -f Gemfile.lock # Uncomment this when removing --frozen from bundle cmd.
+rm -f Gemfile.lock
 rm -f .rbenv-gemsets
 
 if [[ `rbenv --version 2>/dev/null` ]]; then
@@ -30,4 +30,61 @@ yard config --gem-install-yri
 # gem install mini_mime:1.0.0 # dependency of mail:2.7.0; no --no-doc required
 # gem install mail:2.7.0 --no-doc # does not play nicely with YARD
 
-bundle install --binstubs --frozen # --local
+gem install rake:11.3.0
+gem install public_suffix:2.0.4
+gem install addressable:2.5.0
+gem install ast:2.3.0
+gem install byebug:9.0.6
+gem install mime-types-data:3.2016.0521
+gem install mime-types:3.1
+gem install mini_portile2:2.1.0
+gem install nokogiri:1.7.1
+gem install rack:1.6.5
+gem install rack-test:0.6.3
+gem install xpath:2.0.0
+gem install capybara:2.10.1
+gem install coderay:1.1.1
+gem install concurrent-ruby:1.0.2
+gem install dotenv:2.1.1
+gem install dry-configurable:0.3.0
+gem install dry-container:0.5.0
+gem install dry-core:0.2.0
+gem install dry-equalizer:0.2.0
+gem install dry-logic:0.4.0
+gem install inflecto:0.0.2
+gem install dry-types:0.9.1
+gem install dry-validation:0.10.3
+gem install hanami-utils:0.8.0
+gem install hanami-helpers:0.4.0
+gem install tilt:2.0.5
+gem install hanami-assets:0.3.0
+gem install hanami-controller:0.7.1
+gem install mail:2.6.4
+gem install hanami-mailer:0.3.0
+gem install url_mount:0.2.1
+gem install http_router:0.11.2
+gem install hanami-router:0.7.0
+gem install hanami-validations:0.6.0
+gem install hanami-view:0.7.0
+gem install thor:0.19.1
+gem install hanami:0.8.0
+gem install sequel:4.40.0
+gem install hanami-model:0.6.1
+gem install method_source:0.8.2
+gem install minitest:5.9.1
+gem install multi_json:1.12.1
+gem install parser:2.3.1.4
+gem install pg:0.19.0
+gem install powerpack:0.1.1
+gem install slop:3.6.0
+gem install pry:0.10.4
+gem install rainbow:2.1.0
+gem install uber:0.0.15
+gem install representable:2.3.0
+gem install roar:1.0.4
+gem install ruby-progressbar:1.8.1
+gem install unicode-display_width:1.1.1
+gem install rubocop:0.45.0
+gem install shotgun:0.9.2
+
+bundle install --binstubs --local --with development,test
