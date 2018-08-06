@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# This works for MRI; it may or may not work for other Rubies.
+RUBY_VERSION=`ruby --version | cut -d ' ' -f 2 | sed 's/p.*//'`
+
+##
+## Initialise Gemset and setup if `rbenv` is available
+##
+
+# rm -f Gemfile.lock # Uncomment this when removing --frozen from bundle cmd.
+rm -f .rbenv-gemsets
+
+if [[ `rbenv --version 2>/dev/null` ]]; then
+  rbenv gemset delete $RUBY_VERSION ./tmp/gemset 2>/dev/null || true
+  find ./tmp/gemset -delete 2>/dev/null || true
+  rbenv rehash
+  rbenv gemset create $RUBY_VERSION ./tmp/gemset
+  echo ./tmp/gemset > .rbenv-gemsets
+  # echo hanami >> .rbenv-gemsets
+  rbenv rehash
+fi
+
+##
+## Install Gems
+##
+
+gem install yard -v 0.9.15
+yard config --gem-install-yri
+
+# gem install mini_mime:1.0.0 # dependency of mail:2.7.0; no --no-doc required
+# gem install mail:2.7.0 --no-doc # does not play nicely with YARD
+
+bundle install --binstubs --frozen # --local
