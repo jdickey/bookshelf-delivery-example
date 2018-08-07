@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/web/controllers/books/index_spec.rb
 require 'spec_helper'
 require_relative '../../../../apps/web/controllers/books/index'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'features_helper'
 
 describe 'DELETE /api/books/:id' do

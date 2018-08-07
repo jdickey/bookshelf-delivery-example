@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Api::Controllers::Books
   class Index
     include Api::Action
 
     expose :books
 
-    def call(_)
+    def call(_params)
       books = BookRepository.all
       hashes = books.map do |book|
         Api::Representers::Book.new(book).to_hash

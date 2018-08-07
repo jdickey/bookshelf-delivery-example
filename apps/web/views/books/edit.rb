@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Views::Books
   class Edit
     include Web::View

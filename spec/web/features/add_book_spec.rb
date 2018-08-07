@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'features_helper'
 
 describe 'Add a book' do

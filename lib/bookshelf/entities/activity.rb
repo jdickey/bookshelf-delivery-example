@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Activity
   include Hanami::Entity
 
@@ -5,8 +7,8 @@ class Activity
              :new_author
 
   module Action
-    CREATE = 'create'.freeze
-    UPDATE = 'update'.freeze
-    DELETE = 'delete'.freeze
+    CREATE = 'create'
+    UPDATE = 'update'
+    DELETE = 'delete'
   end
 end

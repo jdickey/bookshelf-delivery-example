@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hanami/helpers'
 require_relative 'controllers/validation'
 
@@ -16,7 +18,7 @@ module Api
       # Relative load paths where this application will recursively load the
       # code. When you add new directories, remember to add them here.
       #
-      load_paths << %w(controllers representers)
+      load_paths << %w[controllers representers]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
       # Defaults to true.

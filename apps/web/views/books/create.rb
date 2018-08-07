@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Views::Books
   class Create
     include Web::View

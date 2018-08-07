@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Require this file for feature tests
 require_relative './spec_helper'
 
@@ -6,6 +8,7 @@ require_relative './../apps/cli'
 BIN_PATH = File.join(File.dirname(__FILE__), '..', 'bin', 'bookshelf')
 
 # Based on https://github.com/erikhuda/thor/blob/d634d240bdc0462fe677031e1dc6ed656e54f27e/spec/helper.rb#L49
+# rubocop:disable Style/EvalWithLocation, Metrics/MethodLength
 def cli_command(*args)
   begin
     eval '$stdout = StringIO.new'
@@ -22,3 +25,4 @@ def cli_command(*args)
 
   [stdout, stderr]
 end
+# rubocop:enable Style/EvalWithLocation, Metrics/MethodLength

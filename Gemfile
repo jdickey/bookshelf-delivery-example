@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'bundler'
-gem 'rake'
+gem 'bundler', '>= 1.16.2'
+gem 'rake', '>= 12.3.1'
+
 gem 'hanami',       '~> 0.8'
 gem 'hanami-model', '~> 0.6'
-gem 'pg'
+gem 'pg', '>= 1.0.0'
 
 # API
-gem 'roar'
+gem 'roar', '>= 1.1.0'
 gem 'multi_json'
 
 # CLI
@@ -23,16 +24,15 @@ end
 
 group :test, :development do
   # Config from .env files
-  gem 'dotenv', '~> 2.0'
+  gem 'dotenv', '>= 2.5.0'
 
   # Debugging
-  gem 'byebug'
-  gem 'pry'
+  gem 'pry-byebug', '>= 3.6.0'
 end
 
 group :test do
-  gem 'minitest'
-  gem 'capybara'
+  gem 'minitest', '>= 5.11.0'
+  gem 'capybara', '>= 3.5.1'
 end
 
 group :production do

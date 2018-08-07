@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Controllers::Books
   class Destroy
     include Web::Action

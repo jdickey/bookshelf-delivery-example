@@ -1,17 +1,31 @@
-# Relax this from the default of 10
-Metrics/MethodLength:
-  Description: 'Avoid methods longer than 15 lines of code.'
-  Max: 15
 
-# This is the Hanami generator default
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
-  Exclude:
-    - 'apps/web/application.rb'
-    - 'apps/web/views/application_layout.rb'
-    - 'apps/api/application.rb'
-    - 'apps/api/controllers/validation.rb'
+AllCops:
+  TargetRubyVersion: 2.5
 
-# Almost all classes in this app are self-explanatory
+Metrics/BlockLength:
+  Max: 300
+  Include:
+    - 'spec/**/*_spec.rb'
+
+Metrics/ModuleLength:
+  Max: 300
+  Include:
+    - 'spec/**/*_spec.rb'
+
+Style/CommentedKeyword:
+  Enabled: false
+
+# This silences 'Missing top-level class documentation comment.', which we
+# particularly want to do on (initially-)generated files.
 Style/Documentation:
+  Enabled: false
+  Include:
+    - 'apps/**/*.rb'
+    - 'lib/**/*.rb'
+
+# Hanami generates code with inline module nesting (Web::Views::Home::Index);
+# RuboCop prefers individual nested modules/classes for apparent sensible
+# reasons; see https://github.com/rubocop-hq/ruby-style-guide#namespace-definition
+# But since it's the framework default, let's leave it be until we find issues.
+Style/ClassAndModuleChildren:
   Enabled: false

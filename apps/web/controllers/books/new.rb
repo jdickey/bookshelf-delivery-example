@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Controllers::Books
   class New
     include Web::Action
@@ -6,6 +8,7 @@ module Web::Controllers::Books
     end
 
     def call(params)
+      # empty
     end
   end
 end

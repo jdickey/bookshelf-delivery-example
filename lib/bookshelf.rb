@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hanami/model'
 require 'hanami/mailer'
 Dir["#{__dir__}/bookshelf/**/*.rb"].each { |file| require_relative file }

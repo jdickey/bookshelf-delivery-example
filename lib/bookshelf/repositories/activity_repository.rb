@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActivityRepository
   include Hanami::Repository
 

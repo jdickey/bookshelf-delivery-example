@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api::Controllers::Books
   class Destroy
     include Api::Action

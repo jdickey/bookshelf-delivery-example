@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CLI < Thor
   desc 'list', 'List all books'
   def list
@@ -18,7 +20,7 @@ class CLI < Thor
     if result.success?
       $stdout.puts "Book updated => #{render_book(result.book)}"
     else
-      $stderr.puts "Book id #{id} not found"
+      warn "Book id #{id} not found"
     end
   end
 
@@ -29,7 +31,7 @@ class CLI < Thor
     if result.success?
       $stdout.puts "Book deleted => #{render_book(result.book)}"
     else
-      $stderr.puts "Book id #{id} not found"
+      warn "Book id #{id} not found"
     end
   end
 

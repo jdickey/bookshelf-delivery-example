@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cli_features_helper'
 
 describe 'POST /api/books' do
